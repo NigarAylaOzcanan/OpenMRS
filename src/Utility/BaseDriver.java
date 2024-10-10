@@ -19,11 +19,8 @@ public class BaseDriver {
 
     @BeforeClass
     public void InitialProcedure() {
-
         driver = new ChromeDriver();
-
         driver.manage().window().maximize();
-
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -35,16 +32,12 @@ public class BaseDriver {
     public void CloseProcedure() {
         Tools.wait(2);
         driver.quit();
-
         logger.info("Driver Closed");
-
     }
 
     public void LoginTest() {
         logger.info("Login Page Procedure Started");
-
         driver.get("https://demo.openmrs.org/openmrs/");
-
         logger.info("Login Page Procedure Finished");
     }
 
@@ -57,6 +50,4 @@ public class BaseDriver {
     public void afterMethod(ITestResult result) {
         logger.info(result.getName() + " Method finished " + (result.getStatus() == 1 ? "Passed" : "failed"));
     }
-
-
 }

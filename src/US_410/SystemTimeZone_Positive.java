@@ -16,7 +16,6 @@ public class SystemTimeZone_Positive extends BaseDriver {
 
     @Test(priority = 1)
     public void login() {
-
         // Log in to the application homepage as an admin user.
         // Enter the valid credentials (valid credentials are specified above.)
         ome.mySendKeys(ome.usernamePlc, usernameStr);
@@ -27,17 +26,12 @@ public class SystemTimeZone_Positive extends BaseDriver {
 
     @Test  // (  dependsOnMethods = "appointmentWithIncorrectTimeZone")
     public void appointmentWithCorrectTimeZone() {
-
         wait.until(ExpectedConditions.elementToBeClickable(ome.appointmentScheduling));
         ome.myClick(ome.appointmentScheduling);
-
         wait.until(ExpectedConditions.elementToBeClickable(ome.manageAppointments));
         ome.myClick(ome.manageAppointments);
-
         ome.mySendKeys(ome.patientSearchBox, "Robert Smith" + Keys.ENTER);
         ome.myClick(ome.getSearchedPatientForApt);
         Assert.assertFalse(ome.timeZoneWarningMessage.isDisplayed(), "error message is displayed after changing time zone");
-
     }
-
 }

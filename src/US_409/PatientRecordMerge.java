@@ -27,7 +27,6 @@ public class PatientRecordMerge extends BaseDriver {
 
     @Test(priority = 2)
     public void firstPatient() {
-
         // Click "Register a Patient" button
         ome.myClick(ome.registerAPatient);
 
@@ -51,7 +50,6 @@ public class PatientRecordMerge extends BaseDriver {
         select.selectByIndex(8);
 
         ome.mySendKeys(ome.birthYear, "1998");
-
         ome.myClick(ome.nextButton);
 
         // Patient address information
@@ -60,18 +58,15 @@ public class PatientRecordMerge extends BaseDriver {
         ome.mySendKeys(ome.stateProvince, "Gig Harbor");
         ome.mySendKeys(ome.country, "France");
         ome.mySendKeys(ome.postalCode, "73438");
-
         ome.myClick(ome.nextButton);
 
         // Phone number
         ome.mySendKeys(ome.phoneNumber, "13391");
         ome.myClick(ome.nextButton);
-
         ome.myClick(ome.nextButton);
 
         ome.myClick(ome.confirmButton);
         ID1 = ome.patientID.getText();
-
         ome.myClick(ome.homePageBtn);
     }
 
@@ -100,7 +95,6 @@ public class PatientRecordMerge extends BaseDriver {
         select.selectByIndex(4);
 
         ome.mySendKeys(ome.birthYear, "1998");
-
         ome.myClick(ome.nextButton);
 
         // Patient address information
@@ -117,19 +111,13 @@ public class PatientRecordMerge extends BaseDriver {
 
         ome.myClick(ome.nextButton);
         ome.myClick(ome.nextButton);
-
         ome.myClick(ome.confirmButton);
-
         ID2 = ome.patientID.getText();
-
         ome.myClick(ome.homePageBtn);
-
-
     }
 
     @Test(priority = 4)
     public void patientRecordMerge() {
-
         // Navigate to Merge Patient Page
         ome.myClick(ome.dataManagement);
         ome.myClick(ome.mergePatientBtn);
@@ -144,7 +132,6 @@ public class PatientRecordMerge extends BaseDriver {
 
         ome.myClick(ome.secondPatient);
         ome.myClick(ome.mergeContinueBtn);
-
 
         // Assertion for success message
         Assert.assertEquals(ome.mergedPatientIDs.size(), 2);

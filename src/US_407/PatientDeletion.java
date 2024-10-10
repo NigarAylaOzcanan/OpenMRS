@@ -30,7 +30,6 @@ public class PatientDeletion extends BaseDriver {
 
     @Test(priority = 1)
     public void login() {
-
         // Log in to the application homepage as an admin user.
         // Enter the valid credentials (valid credentials are specified above.)
         ome.mySendKeys(ome.usernamePlc, usernameStr);
@@ -41,7 +40,6 @@ public class PatientDeletion extends BaseDriver {
 
     @Test(priority = 2)
     public void patientRegistration() {
-
         // Create a customer/patient account for the test scenario
         // Enter the customer data for registration
         wait.until(ExpectedConditions.elementToBeClickable(ome.registerAPatient));
@@ -73,7 +71,6 @@ public class PatientDeletion extends BaseDriver {
         ome.mySendKeys(ome.personName, patientRelativeStr);
         ome.myClick(ome.nextButton);
         ome.myClick(ome.confirmButton);
-
     }
 
     @Test(priority = 3)
@@ -89,7 +86,6 @@ public class PatientDeletion extends BaseDriver {
 
     @Test(priority = 4, dependsOnMethods = {"deleteThePatientRecord"})
     public void verifyTheDeletion() {
-
         // Enter the name or ID of the deleted patient in the search field.
         wait.until(ExpectedConditions.visibilityOf(ome.patientSearchBox));
         ome.mySendKeys(ome.patientSearchBox, patientCredentialsStr + Keys.ENTER);

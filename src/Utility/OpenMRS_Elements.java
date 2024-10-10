@@ -135,5 +135,4 @@ public class OpenMRS_Elements extends ParentPage {
     public List<WebElement> patientInformation;
     @FindBy(xpath = "//td[contains(text(),'No entries')]")
     public WebElement NoEntriesText;
-
 }
